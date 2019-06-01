@@ -18,7 +18,7 @@
     <script async src="//apps.8thwall.com/xrweb?appKey=116QUVFVhb1TNzUDXlYob4dYesq4x4h8HsDxc6rCoBGgjzqVjn1BUGjemA78MUcdsdElVv"></script>
 
     <script>
-        // Component that places trees where the ground is clicked
+        // Component that places mushrooms where the ground is clicked
         AFRAME.registerComponent('tap-place', {
             init: function () {
                 const ground = document.getElementById('ground')
@@ -36,7 +36,7 @@
                     newElement.setAttribute('visible', 'false')
                     newElement.setAttribute('scale', '0.0001 0.0001 0.0001')
 
-                    newElement.setAttribute('gltf-model', '#treeModel')
+                    newElement.setAttribute('gltf-model', '#mushroomModel')
                     this.el.sceneEl.appendChild(newElement)
 
                     newElement.addEventListener('model-loaded', () => {
@@ -62,7 +62,7 @@
         <!-- We can define assets here to be loaded when A-Frame initializes -->
         <a-assets>
             <!-- Credit to Ben Desai (CC-BY) for the model: https://poly.google.com/view/aMofGeLaQYj -->
-            <a-asset-item id="treeModel" src="models/mushrooms.glb"></a-asset-item>
+            <a-asset-item id="mushroomModel" src="models/mushrooms.glb"></a-asset-item>
         </a-assets>
 
         <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
